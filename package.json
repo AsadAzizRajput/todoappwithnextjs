@@ -1,0 +1,24 @@
+{
+  "name": "with-ant-design",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "next build",
+    "start": "next start -p 8000"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.14.1",
+    "axios": "^0.18.0",
+    "babel-plugin-import": "^1.11.0",
+    "customize-cra": "^0.2.12",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.0.3",
+    "now": "^14.0.3",
+    "react": "^16.8.3",
+    "react-app-rewired": "^2.1.0",
+    "react-dom": "^16.8.3",
+    "styled-jsx": "^3.2.1"
+  },
+  "license": "ISC"
+}
