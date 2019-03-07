@@ -63,14 +63,14 @@ const axios = require('axios');
             {getFieldDecorator('name', {
               rules: [{ required: true, message:'' }],
             })(
-              <Input  type="text" placeholder='Type Todo...' />
+              <Input  type="text" id="name" placeholder='Type Todo...' />
             )}
           </FormItem>
           <FormItem>
             {getFieldDecorator('order', {
               rules: [{ required: true, message:'' }],
             })(
-              <Input  type="text" placeholder='Type order...' />
+              <Input  type="text" id="order" placeholder='Type order...' />
             )}
           </FormItem>
           <FormItem>
