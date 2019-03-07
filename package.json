@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "next build",
-    "start": "next start -p 8000"
+    "start": "next start -p 8000",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -21,4 +24,5 @@
     "styled-jsx": "^3.2.1"
   },
   "license": "ISC"
+ 
 }

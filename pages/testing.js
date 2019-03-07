@@ -1,12 +1,17 @@
-import Layout from '../components/Layout'
-const testing = () => (
-    <Layout>
-    <div>
-        <h1>
-          Index
-        </h1>
-    </div>
-    </Layout>
-)
+import React from 'react';
 
-export default testing;
+class Testing extends React.Component  {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+      <div>         
+        Hello Next.js
+      </div>
+    )
+  }
+}
+
+export default Testing
