@@ -9,17 +9,16 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  // server.get('/p/:id', (req, res) => {
-  //   const actualPage = '/post'
-  //   const queryParams = { title: req.params.id } 
-  //   app.render(req, res, actualPage, queryParams)
-  // })
-
-  server.get('/e/:id', (req, res) => {
-    const actualPage = '/edit'
-    const queryParams = { id: req.params.id }
+  server.get('/edittodo/:id', (req, res) => {
+    const actualPage = '/edittodo'
+    const queryParams = { id: req.params.id } 
     app.render(req, res, actualPage, queryParams)
-})
+  })
+
+//   server.get('/edittodo/:id', (req, res) => {
+//     return app.render(req, res, "/edittodo", { id: req.params.id })
+// })
+
 
   server.get('*', (req, res) => {
     return handle(req, res)

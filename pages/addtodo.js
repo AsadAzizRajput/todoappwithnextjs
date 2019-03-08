@@ -38,7 +38,7 @@ const axios = require('axios');
             'Content-Type': 'application/json'
           }
         }).then(res => res.json())
-        .then(response =>  Router.push('/alltodo'))
+        .then(response =>  Router.push('/'))
         .catch(error => console.error('Error:', error));
       
 

@@ -3,20 +3,14 @@ import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import { message,Layout,List,Form,Input,Icon,Button  } from 'antd';
 
-
 const {
   Header, Content,
 } = Layout;
-
-const FormItem = Form.Item
-
-const axios = require('axios');
-
+const FormItem = Form.Item;
 
  class edittodo extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props)
   }
 
   
@@ -29,28 +23,20 @@ const axios = require('axios');
           order:values.order,
           completed:true
         }
-
-        console.log(values);
         fetch('https://todo-backend-rails.herokuapp.com/'+this.props.show.id, {
-          method: 'PATCH', // or 'PUT'
+          method: 'PATCH',
           body: JSON.stringify(data),
           headers:{
             'Accept':'application/json',
             'Content-Type': 'application/json'
           }
         }).then(res => res.json())
-        .then(response =>  Router.push('/alltodo'))
-        .catch(error => console.error('Error:', error));
-      
-
-        
+        .then(response =>  Router.push('/'))
+        .catch(error => console.error('Error:', error)); 
       }
     });
   }
-
-
   render() {
-    
     const { getFieldDecorator } = this.props.form;
     return (
       <div >
@@ -59,7 +45,6 @@ const axios = require('axios');
       Add Todos</Header>
       <Content> 
       <Form onSubmit={this.handleSubmit}>
-        
           <FormItem>
             {getFieldDecorator('name', {
               rules: [{ required: true, message:'' }],
@@ -83,29 +68,18 @@ const axios = require('axios');
           </FormItem>
        </Form>  
     </Content>
-
     </Layout>
       </div>
     );
   }
 }
-
-
-
-
-
-
 edittodo.getInitialProps = async function (context) {
     const { id } = context.query
     const res = await fetch(`https://todo-backend-rails.herokuapp.com/${id}`)
     const show = await res.json()
-  
-    console.log(`Fetched show: ${show.title}`)
-  
     return { show }
   }
 
 edittodo = Form.create()(edittodo);
-
 export default edittodo;
 
