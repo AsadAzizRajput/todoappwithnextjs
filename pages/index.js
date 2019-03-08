@@ -46,15 +46,33 @@ delete(record){
         renderItem={(item,index) => (
          
         <List.Item key={index}>
-            <Row>
-          <Col span={24}>
+            {/* <Row>
+          <Col span={12}>
           <Link href={`/edittodo?id=${item.id}`} as={`/edittodo/${item.id}`}>
           <a>{item.title}</a>
           </Link>
          
-          <Button type="danger"  onClick={this.delete.bind(this, item)} >Delete</Button>
+       
+          </Col>
+          <Col span={12}>
+          <Button type="danger"   onClick={this.delete.bind(this, item)} >Delete</Button>
           </Col>
           
+        </Row> */}
+
+        <Row>
+          <Col span={18}>
+          <Link href={`/edittodo?id=${item.id}`} as={`/edittodo/${item.id}`}>
+          <a>{item.title}</a>
+          </Link>
+          </Col>
+          {/* <Col span={6}>
+      
+          </Col> */}
+          <Col span={6}>
+          <Button type="danger"   onClick={this.delete.bind(this, item)} >Delete</Button>
+          </Col>
+
         </Row>
       
       
